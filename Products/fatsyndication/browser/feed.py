@@ -1,14 +1,10 @@
-# Five imports
+import os.path
+from zope.component import getMultiAdapter
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile \
     import ZopeTwoPageTemplateFile as PageTemplateFile
-
-# Zope3 imports
-from zope.component import getMultiAdapter
-
-# basesyndication imports
 from Products.basesyndication.interfaces import IFeed
-
+import basesyndication
 
 class FeedView(BrowserView):
     """Provides the various feed views for the IFeed interface.
@@ -25,11 +21,13 @@ class FeedView(BrowserView):
         response.setHeader('Last-Modified', modified.toZone('GMT').rfc822())
         return super(FeedView, self).__init__(context, request)
 
-    atom  = PageTemplateFile('../../basesyndication/browser/atom.xml.pt')
-    rss   = PageTemplateFile('../../basesyndication/browser/rss.xml.pt')
-    rdf   = PageTemplateFile('../../basesyndication/browser/feed.rdf.pt')
-    rdf11 = PageTemplateFile('../../basesyndication/browser/feed11.rdf.pt')
-    itunes = PageTemplateFile('../../basesyndication/browser/itunes.xml.pt')
+    basepath = os.path.join(os.path.dirname(basesyndication.__file__), 
+                            'browser')
+    atom   = PageTemplateFile(os.path.join(basepath, 'atom.xml.pt'))
+    rss    = PageTemplateFile(os.path.join(basepath, 'rss.xml.pt'))
+    rdf    = PageTemplateFile(os.path.join(basepath, 'feed.rdf.pt'))
+    rdf11  = PageTemplateFile(os.path.join(basepath, 'feed11.rdf.pt'))
+    itunes = PageTemplateFile(os.path.join(basepath, 'itunes.xml.pt'))
 
 class GenericFeedView(BrowserView):
     """Adapts its context to IFeed, then looks up the appropriate view to
