@@ -75,6 +75,7 @@ class BaseFeedEntry:
         """See IFeedEntry.
         """
         # XXX Implement me properly!
+        # self.context.Rights() ??
         return ''
 
     def getEnclosure(self):
