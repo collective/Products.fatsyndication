@@ -4,7 +4,7 @@ from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile \
     import ZopeTwoPageTemplateFile as PageTemplateFile
 from Products.basesyndication.interfaces import IFeed
-import basesyndication
+from Products import basesyndication
 
 class FeedView(BrowserView):
     """Provides the various feed views for the IFeed interface.
