@@ -109,6 +109,11 @@ class DocumentFeedEntry(BaseFeedEntry):
         """
         return self.context.CookedBody()
 
+    def getDescription(self):
+        """See IFeedEntry.
+        """
+        return self.context.Description()
+
     def getEffectiveDate(self):
         """See IFeedEntry.
         """
