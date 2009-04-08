@@ -114,8 +114,3 @@ class DocumentFeedEntry(BaseFeedEntry):
         """
         return self.context.Description()
 
-    def getEffectiveDate(self):
-        """See IFeedEntry.
-        """
-        return self.context.modified()
-
