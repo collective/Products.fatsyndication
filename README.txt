@@ -1,7 +1,7 @@
-Products.fatsyndication Package Readme
-=========================
+=======================
+Products.fatsyndication
+=======================
 
-Overview
---------
+Generic syndication support for Archetypes content. For supported feed types see
+package Products.basesyndication.
 
-Archetypes implementation for basesyndication
