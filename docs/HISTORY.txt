@@ -5,7 +5,7 @@ Changelog for Products.fatsyndication
 1.0.0
 -----
 
-- updated egg metadata, package description and history (rXXXXX, r83999)
+- updated egg metadata, package description and history (r85095, r83999)
 
 - set translation domain for ZCML files (r84969)
 
