@@ -1,9 +1,14 @@
 Changelog for Products.fatsyndication
 =====================================
 
-
-1.0.0
+1.0.1
 -----
+
+- let the egg depend on 'Products.basesyndication';
+  fixes Quills issue #190 (r85361)
+
+1.0.0 (rev. 85110)
+------------------
 
 - updated egg metadata, package description and history (r85095, r83999)
 
