@@ -57,8 +57,10 @@ class FeedMixin:
     def getImageURL(self):
         """See IFeed.
         """
-        portal_url = getToolByName(self, 'portal_url')()
-        return '%s/logo.png' % portal_url
+        portal = getToolByName(self, 'portal_url').getPortalObject()
+        logoName = portal.restrictedTraverse(
+            'base_properties').getProperty('logoName', 'logo.png')
+        return '%s/%s' % (portal.absolute_url(), logoName)
 
     def getEncoding(self):
         """See IFeed.
