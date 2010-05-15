@@ -38,11 +38,6 @@ class GenericFeedView(BrowserView):
     """
 
     def getFeed(self):
-        # This first test may be superfluous.  The motivation is that we
-        # don't want the returned IFeed to be wrapped in itself if 'self'
-        # already implements IFeed.
-        if IFeed.providedBy(self):
-            return self
         # Must have an acquisition context in order to play properly
         # with zope
         feed = IFeed(self.context).__of__(self.context)
