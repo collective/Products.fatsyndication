@@ -5,7 +5,7 @@ Changelog for Products.fatsyndication
 ------------------
 
 - update README.txt, HISTORY.txt, add LICENSE, add Plone 4.3
-  PyPi classifier
+  PyPi classifier, avoid failing if no getMaxItems() attribute
   [tkimnguyen]
 
 1.0.1 (2009-05-04)
