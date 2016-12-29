@@ -12,5 +12,8 @@ class BaseFeedSource:
         """See IFeedSource.
         """
         syntool = getToolByName(self.context, 'portal_syndication')
-        return syntool.getMaxItems()
-
+        try:
+            maxitems = syntool.getMaxItems()
+        except AttributeError:
+            maxitems = 0
+        return maxitems

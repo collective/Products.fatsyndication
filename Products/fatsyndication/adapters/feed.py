@@ -72,8 +72,12 @@ class FeedMixin:
         """See IFeed.
         """
         syntool = getToolByName(self, 'portal_syndication')
-        return syntool.getMaxItems()
-
+        try:
+            maxitems = syntool.getMaxItems()
+        except AttributeError:
+            maxitems = 0
+        return maxitems
+    
     def getBaseURL(self):
         """See IFeed.
         """
